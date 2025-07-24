@@ -12,14 +12,24 @@ body{font-size: 15px;}
 .container {max-width: 500px;width: 100%;margin: 0 auto;padding: 20px;position: relative;}
 h2 {border-left: 4px solid #333;padding-left: 0.5rem;margin-left: 0;font-size: 1.4rem}
 li{list-style:circle;margin: 5px 0 0 5px;}
-code {background-color: #2E3440;color: #fff;padding: 0.2em 0.4em;border-radius: 4px;font-family: monospace;font-size: 0.95em;}
+code {
+  background-color: #2E3440;
+  color: #fff;
+  padding: 0.2em 0.4em;
+  border-radius: 4px;
+  font-family: monospace;
+  font-size: 0.95em;
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
+}
 footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
   .top-menu {position: absolute;top: 10px;right: 40px;}
   .top-menu ul {display: flex;gap: 1px;list-style: none;margin: 0;padding: 0;}
   .top-menu li {list-style: none;}
   .top-menu a {text-decoration: none;}
   .lang-dropdown summary {cursor: pointer;list-style: none;}
-  .lang-dropdown ul {flex-direction: column;list-style: none;position: absolute;right: 0;white-space: nowrap;border-radius: 15px;border: 2px solid #333;}
+  .lang-dropdown ul {flex-direction: column;list-style: none;position: absolute;right: 0;white-space: nowrap;}
   .lang-dropdown a{color: #333;}
 </style>
 <body>
@@ -76,7 +86,6 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
         <code>73E3 16D8 E123 0A71 2860 CC75 4A02 CBC8 9844 DD97</code>
     <li>PGP : <a href="https://github.com/atmatjp.gpg">Show on github</a></li>
     <li>PGP : <a href="/assets/accessory/pub.asc" download>Download on HTTP</a></li>
-
 </ul>
 <!---->
 <h2 id="misc"></h2>
