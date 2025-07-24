@@ -1,39 +1,209 @@
 <!DOCTYPE html>
 <html lang="ja">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="shortcut icon" href="/assets/img/fav.png" type="image/x-icon">
+    <link rel="shortcut icon" href="/assets/img/turu.JPG" type="image/x-icon">
     <title>こばやしのページ</title>
 </head>
+<style>
+* {font-weight: 100;font-family:sans-serif, monospace;word-break: break-all;}
+body{font-size: 15px;}
+.container {max-width: 500px;width: 100%;margin: 0 auto;padding: 20px;position: relative;}
+h2 {border-left: 4px solid #333;padding-left: 0.5rem;margin-left: 0;font-size: 1.4rem}
+li{list-style:circle;margin: 5px 0 0 5px;}
+code {background-color: #2E3440;color: #fff;padding: 0.2em 0.4em;border-radius: 4px;font-family: monospace;font-size: 0.95em;}
+footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
+  .top-menu {position: absolute;top: 10px;right: 40px;}
+  .top-menu ul {display: flex;gap: 1px;list-style: none;margin: 0;padding: 0;}
+  .top-menu li {list-style: none;}
+  .top-menu a {text-decoration: none;}
+  .lang-dropdown summary {cursor: pointer;list-style: none;}
+  .lang-dropdown ul {flex-direction: column;list-style: none;position: absolute;right: 0;white-space: nowrap;border-radius: 15px;border: 2px solid #333;}
+  .lang-dropdown a{color: #333;}
+</style>
 <body>
-    <div class="container">
-        <div id="path"></div>
-            <!---->
-            <h1>こばやしのページ</h1>
-            <img src="/assets/img/turu.JPG" alt="turu" width="200">
-            <!---->
-            <h2>基本情報</h2>
-            <ul>
-            <li>名前:小林</li>
-            <li>誕生日:06/07</li>
-            <li>場所:日本国,大阪府</li>
-            </ul>
-            <!---->
-            <!---->
-            <h2>アカウント</h2>
-            <ul>
-            <li>Twitter: <a href="https://x.com/atmatjp" target="_blank">@atmatjp</a></li>
-            <li>Misskey: <a href="https://misskey.io/@atmatjp" target="_blank">@atmatjp</a></li>
-            <li>Discord: <a href="">@atmatjp</a></li>
-            <li>Signal: <a href="https://signal.me/#eu/AioTIwZpwpt0UvdXCPsIFgLILKF6qHdGgBC6Mi3QQlyDicnhbHJCzbYTEdgrdI0i" target="_blank">@atmatjp</a></li>
-            <li>ListenBrainz: <a href="https://listenbrainz.org/user/atmatjp/" target="_blank">@atmatjp</a></li>
-            <li>Bookmeter: <a href="https://bookmeter.com/home" target="_blank">@atmatjp</a></li>
-            </ul>
-            <!---->
-        <footer>&copy; 2025 小林 All right reserved</footer>
-    </div>
+<div class="container">
+<!---->
+<h1>>_D welcome!</h1>
+<img src="/assets/img/turu.JPG" alt="turu" width="100">
+<!-- MENU -->
+<nav class="top-menu">
+  <ul>
+    <li>
+      <details class="lang-dropdown">
+        <summary><span id="lang-label">日本語</span></summary>
+        <ul>
+          <li><a href="#" onclick="setLang('ja')">日本語</a></li>
+          <li><a href="#" onclick="setLang('en')">English</a></li>
+          <li><a href="#" onclick="setLang('zh')">繁體中文</a></li>
+        </ul>
+      </details>
+    </li>
+  </ul>
+</nav>
+<!---->
+<h2 id="profile"></h2>
+<ul>
+<li id="name"></li>
+<li id="birthday"></li>
+<li id="locale"></li>
+</ul>
+<!---->
+<h2 id="hobby"></h2>
+<ul>
+    <li id="music"></li>
+    <li id="travel"></li>
+    <li id="karaoke"></li>
+    <li id="linux"></li>
+</ul>
+
+<!---->
+<h2 id="links"></h2>
+<ul>
+    <li>Twitter: <a href="https://x.com/atmatjp" target="_blank">@atmatjp</a></li>
+    <li>GitHub: <a href="https://github.com/atmatjp" target="_blank">@atmatjp</a></li>
+    <li>Signal: <a href="https://signal.me/#eu/AioTIwZpwpt0UvdXCPsIFgLILKF6qHdGgBC6Mi3QQlyDicnhbHJCzbYTEdgrdI0i"
+    target="_blank">@atmatjp</a></li>
+    <li>ListenBrainz: <a href="https://listenbrainz.org/user/atmatjp/" target="_blank">@atmatjp</a></li>
+</ul>
+<!---->
+<h2 id="contact"></h2>
+<ul>
+    <li id="mail"></li>
+        <code>atmatjp / at / gmail / dot / com</code>
+    <li id="fingerprint"></li>
+        <code>73E3 16D8 E123 0A71 2860 CC75 4A02 CBC8 9844 DD97</code>
+    <li>PGP : <a href="https://github.com/atmatjp.gpg">Show on github</a></li>
+    <li>PGP : <a href="/assets/accessory/pub.asc" download>Download on HTTP</a></li>
+
+</ul>
+<!---->
+<h2 id="misc"></h2>
+<ul>
+    <li><a href="/assets/update/log.txt" id="update"></a></li>
+</ul>
+<!---->
+<footer>&copy; 2025 小林</footer>
+</div>
+<script>
+    const messages = {
+        ja: {
+            profile: {
+                heading: "プロフィール",
+                name: "名前:小林",
+                birthday: "誕生日: 05/06/07",
+                locale: "場所:日本国"
+            },
+            hobby: {
+                heading: "趣味・興味",
+                music: "音楽を聴くこと",
+                karaoke: "カラオケ",
+                travel: "旅行へ行くこと",
+                linux: "Linux"
+            },
+            links:{
+                heading:"リンク"
+            },
+            contact:{
+                heading:"連絡先",
+                mail: "メールアドレス",
+                fingerprint: "指紋"
+            },
+            misc:{
+                heading: "その他",
+                update: "更新履歴"
+            }
+        },
+        en: {
+            profile: {
+                heading: "Profile",
+                name: "Name: Kobayasi",
+                birthday: "Birthday: 05/06/07",
+                locale: "Location: Japan"
+            },
+            hobby: {
+                heading: "Hobbies & Interests",
+                music: "Listen music",
+                karaoke: "Karaoke",
+                travel: "Go to travel",
+                linux: "Linux"
+            },
+            links: {
+                heading: "Links"
+            },
+            contact: {
+                heading: "Contact",
+                mail: "mail address",
+                fingerprint: "Fingerprint"
+            },
+            misc: {
+                heading: "Misc",
+                update: "Update Log"
+            }
+
+        },
+        zh: {
+            profile: {
+                heading: "自我介紹",
+                name: "名稱：小林",
+                birthday: "生日：05/06/07",
+                locale: "地點：日本國"
+            },
+            hobby: {
+                heading: "嗜好和興趣",
+                music: "聽音樂",
+                karaoke: "卡拉OK",
+                travel: "去旅行",
+                linux: "Linux"
+            },
+            links:{
+                heading: "連結"
+            },
+            contact: {
+                heading: "接觸",
+                mail: "電子郵件地址",
+                fingerprint: "鑰匙指紋"
+            },
+            misc: {
+                heading: "其他",
+                update: "更新日誌"
+            }
+        }
+    };
+
+    function setLang(lang) {
+        const langLabelMap = { ja: "日本語", en: "English", zh: "繁體中文" };
+        document.getElementById("lang-label").textContent = langLabelMap[lang];
+        //
+        document.getElementById("profile").textContent = messages[lang].profile.heading;
+        document.getElementById("name").textContent = messages[lang].profile.name;
+        document.getElementById("birthday").textContent = messages[lang].profile.birthday;
+        document.getElementById("locale").textContent = messages[lang].profile.locale;
+        //
+        document.getElementById("hobby").textContent = messages[lang].hobby.heading;
+        document.getElementById("music").textContent = messages[lang].hobby.music;
+        document.getElementById("karaoke").textContent = messages[lang].hobby.karaoke;
+        document.getElementById("travel").textContent = messages[lang].hobby.travel;
+        document.getElementById("linux").textContent = messages[lang].hobby.linux;
+        //
+        document.getElementById("links").textContent = messages[lang].links.heading;
+        //
+        document.getElementById("contact").textContent = messages[lang].contact.heading;
+        document.getElementById("mail").textContent = messages[lang].contact.mail;
+        document.getElementById("fingerprint").textContent = messages[lang].contact.fingerprint;
+        //
+        document.getElementById("misc").textContent = messages[lang].misc.heading;
+        document.getElementById("update").textContent = messages[lang].misc.update;
+    }
+    setLang('ja');
+    document.addEventListener('click', function(event) {
+      const dropdown = document.querySelector('.lang-dropdown');
+      if (!dropdown.contains(event.target)) {
+        dropdown.removeAttribute('open');
+      }
+    });
+</script>
+
 </body>
 </html>
