@@ -57,6 +57,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
     <li id="music"></li>
     <li id="travel"></li>
     <li id="karaoke"></li>
+    <li id="web"></li>
     <li id="linux"></li>
 </ul>
 <!---->
@@ -82,6 +83,8 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
 <h2 id="misc"></h2>
 <ul>
     <li><a href="/assets/update/log.txt" id="update"></a></li>
+    <li>空きテナント</li>
+    <li>空きテナント</li>
 </ul>
 <!---->
 <footer>&copy; 2025 小林</footer>
@@ -100,6 +103,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
                 music: "音楽を聴くこと",
                 karaoke: "カラオケ",
                 travel: "旅行へ行くこと",
+                web:"web",
                 linux: "Linux"
             },
             links:{
@@ -108,7 +112,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
             contact:{
                 heading:"連絡先",
                 mail: "メールアドレス",
-                fingerprint: "指紋"
+                fingerprint: "鍵指紋"
             },
             misc:{
                 heading: "その他",
@@ -127,6 +131,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
                 music: "Listen music",
                 karaoke: "Karaoke",
                 travel: "Go to travel",
+                web: "web",
                 linux: "Linux"
             },
             links: {
@@ -155,6 +160,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
                 music: "聽音樂",
                 karaoke: "卡拉OK",
                 travel: "去旅行",
+                web: "網路",
                 linux: "Linux"
             },
             links:{
@@ -185,6 +191,7 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
         document.getElementById("music").textContent = messages[lang].hobby.music;
         document.getElementById("karaoke").textContent = messages[lang].hobby.karaoke;
         document.getElementById("travel").textContent = messages[lang].hobby.travel;
+        document.getElementById("web").textContent = messages[lang].hobby.web;
         document.getElementById("linux").textContent = messages[lang].hobby.linux;
         //
         document.getElementById("links").textContent = messages[lang].links.heading;

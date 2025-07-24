@@ -1,4 +1,4 @@
-2025/07/24 - その他にupdate.txtを追加
-2025/07/01 - HTML4.01 >> HTML5へ移行
-2025/06/20 - アップロード
-2025/06/15 - Astroから移行
+2025/07/24 - Added upload.txt to Misc directory,added static HTML page
+2025/07/01 - Updated HTML version from 4.01 to 5
+2025/06/20 - Uploaded site files
+2025/06/15 - Migrated from Astro to plain HTML
