@@ -7,21 +7,31 @@
     <title>こばやしのページ</title>
 </head>
 <style>
+:root {
+/*main*/
+--text-color: #333;
+--bg-color:#fff;
+--menu-border:#ccc;
+--midasi-border:#313237;
+/*code*/
+--code-bg:#2E3440;
+--code-txt:#fff;
+}
 * {font-weight: 100;font-family:sans-serif, monospace;word-break: break-all;}
 body {margin: 0;padding: 0;overflow-x: hidden;font-size: 15px;box-sizing: border-box;max-width: 100vw;}
 html {box-sizing: border-box;max-width: 100vw;}
 .container {max-width: 500px;width: 100%;margin: 0 auto;padding: 20px;position: relative;overflow-x: hidden;box-sizing: border-box;}
-h2 {border-left: 4px solid #333;padding-left: 0.5rem;margin-left: 0;font-size: 1.4rem}
+h2 {border-left: 4px solid var(--midasi-border);padding-left: 0.5rem;margin-left: 0;font-size: 1.4rem}
 li{list-style:circle;margin: 5px 0 0 5px;}
-code {background-color: #2E3440;color: #fff;padding: 0.2em 0.4em;border-radius: 4px;font-family: monospace;font-size: 0.95em;word-break: break-word;overflow-wrap: break-word;white-space: normal;}
-footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
+code {background-color:var(--code-bg);color:var(--code-txt);padding: 0.2em 0.4em;border-radius: 4px;font-family: monospace;font-size: 0.95em;word-break: break-word;overflow-wrap: break-word;white-space: normal;}
+footer{border-top: 1px solid var(--text-color);padding: 10px 0;text-align: center;}
 .top-menu ul {display: flex;flex-direction: column;gap: 1px;list-style: none;margin: 0;padding: 0;}
 .top-menu li {list-style: none;}
 .top-menu a {text-decoration: none;}
 .lang-dropdown {position: relative;}
 .lang-dropdown summary {cursor: pointer;list-style: none;}
-.lang-dropdown ul {display: block;position: absolute;top: 100%;right: 0;background-color: #fff;border: 1px solid #ccc;padding: 0.5rem;margin: 0;list-style: none;z-index: 1001;width: max-content;}
-.lang-dropdown a{color: #333;}
+.lang-dropdown ul {display: block;position: absolute;top: 100%;right: 0;background-color:var(--bg-color);border: 1px solid var(--menu-border);padding: 0.5rem;margin: 0;list-style: none;z-index: 1001;width: max-content;}
+.lang-dropdown a{color:var(--text-color);}
 .top-menu {position: absolute;top: 10px;right: 10px;z-index: 1000;background-color: transparent;}
 </style>
 <body>
@@ -91,92 +101,91 @@ footer{border-top: 1px solid #333;padding: 10px 0;text-align: center;}
 </div>
 <script>
     const messages = {
-        ja: {
-            profile: {
-                heading: "プロフィール",
-                name: "名前:小林",
-                birthday: "誕生日: 05/06/07",
-                locale: "場所:日本国"
+            ja: {
+                profile: {
+                    heading: "プロフィール",
+                    name: "名前:小林",
+                    birthday: "誕生日: 05/06/07",
+                    locale: "場所:日本国"
+                },
+                hobby: {
+                    heading: "趣味・興味",
+                    music: "音楽を聴くこと",
+                    karaoke: "カラオケ",
+                    travel: "旅行へ行くこと",
+                    web: "web",
+                    linux: "Linux"
+                },
+                links: {
+                    heading: "リンク"
+                },
+                contact: {
+                    heading: "連絡先",
+                    mail: "メールアドレス",
+                    fingerprint: "鍵指紋"
+                },
+                misc: {
+                    heading: "その他",
+                    update: "更新履歴"
+                }
             },
-            hobby: {
-                heading: "趣味・興味",
-                music: "音楽を聴くこと",
-                karaoke: "カラオケ",
-                travel: "旅行へ行くこと",
-                web:"web",
-                linux: "Linux"
+            en: {
+                profile: {
+                    heading: "Profile",
+                    name: "Name: Kobayasi",
+                    birthday: "Birthday: 05/06/07",
+                    locale: "Location: Japan"
+                },
+                hobby: {
+                    heading: "Hobbies & Interests",
+                    music: "Listening to music", // 修正
+                    karaoke: "Karaoke",
+                    travel: "Traveling", // 修正
+                    web: "Web", // 大文字に修正
+                    linux: "Linux"
+                },
+                links: {
+                    heading: "Links"
+                },
+                contact: {
+                    heading: "Contact",
+                    mail: "Email Address", // 修正
+                    fingerprint: "Fingerprint"
+                },
+                misc: {
+                    heading: "Misc",
+                    update: "Update Log"
+                }
             },
-            links:{
-                heading:"リンク"
-            },
-            contact:{
-                heading:"連絡先",
-                mail: "メールアドレス",
-                fingerprint: "鍵指紋"
-            },
-            misc:{
-                heading: "その他",
-                update: "更新履歴"
+            zh: {
+                profile: {
+                    heading: "自我介紹",
+                    name: "名稱：小林",
+                    birthday: "生日：05/06/07",
+                    locale: "地區：日本"
+                },
+                hobby: {
+                    heading: "興趣嗜好", // より自然な表現に修正
+                    music: "聽音樂",
+                    karaoke: "卡拉OK",
+                    travel: "去旅行",
+                    web: "網路",
+                    linux: "Linux"
+                },
+                links: {
+                    heading: "連結"
+                },
+                contact: {
+                    heading: "聯絡方式", // 修正
+                    mail: "電子郵件地址",
+                    fingerprint: "金鑰指紋" // 修正
+                },
+                misc: {
+                    heading: "其他",
+                    update: "更新日誌"
+                }
             }
-        },
-        en: {
-            profile: {
-                heading: "Profile",
-                name: "Name: Kobayasi",
-                birthday: "Birthday: 05/06/07",
-                locale: "Location: Japan"
-            },
-            hobby: {
-                heading: "Hobbies & Interests",
-                music: "Listen music",
-                karaoke: "Karaoke",
-                travel: "Go to travel",
-                web: "web",
-                linux: "Linux"
-            },
-            links: {
-                heading: "Links"
-            },
-            contact: {
-                heading: "Contact",
-                mail: "mail address",
-                fingerprint: "Fingerprint"
-            },
-            misc: {
-                heading: "Misc",
-                update: "Update Log"
-            }
-
-        },
-        zh: {
-            profile: {
-                heading: "自我介紹",
-                name: "名稱：小林",
-                birthday: "生日：05/06/07",
-                locale: "地點：日本國"
-            },
-            hobby: {
-                heading: "嗜好和興趣",
-                music: "聽音樂",
-                karaoke: "卡拉OK",
-                travel: "去旅行",
-                web: "網路",
-                linux: "Linux"
-            },
-            links:{
-                heading: "連結"
-            },
-            contact: {
-                heading: "接觸",
-                mail: "電子郵件地址",
-                fingerprint: "鑰匙指紋"
-            },
-            misc: {
-                heading: "其他",
-                update: "更新日誌"
-            }
-        }
-    };
+        };
 
     function setLang(lang) {
         const langLabelMap = { ja: "日本語", en: "English", zh: "繁體中文" };
